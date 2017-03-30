@@ -6,9 +6,66 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
   </head>
-
   <body>
-    <%= yield %>
+	<header>
+		<nav class="logo">
+			<a href="">Michael Lee Wise</a>
+		</nav>
+		<nav class="navButtons">
+			<!-- https://css-tricks.com/navigation-in-lists-to-be-or-not-to-be/ -->
+			<div class="navButton">
+				<a href="static_pages/techinmiami">tech in miami</a>
+
+			</div> 
+			<div class="navButton">
+				<a href="static_pages/blogs">blogs</a>
+			</div> 
+			<div class="navButton">
+				<a href="static_pages/works">works</a>
+				<!-- demos -->
+				<!-- projects -->
+				<!-- portfolio -->
+				<!-- mesaplot -->
+			</div> 
+			<div class="navButton">
+				<a href="static_pages/me">me</a>
+			</div> 
+		</nav>
+	</header>
+
+	<header class="subheader" id="tech">
+		<nav>startup corner</nav>
+		<nav>events</nav>
+	</header>
+	<header class="subheader" id="blogs">
+		<nav>Technical</nav>
+		<nav>Personal</nav>
+		<!-- <nav>Essays</nav> -->
+	</header>
+	<header class="subheader" id="works">
+		<nav>Demos</nav>
+		<nav>Projects</nav>
+		<nav>Portfolio</nav>
+		<nav>Mesaplot</nav>
+	</header>
+	<header class="subheader" id="me">
+		<nav>Me</nav>
+	</header>
+	
+	<main>
+		<%# Displays a bulky logged-in header that only an admin will see.  %>
+		<%# There is no publicly displayed link to login. Visit /login to log in.
+		<%# Registration is disabled via /users/new route being commented. %>
+		<% if current_user %>
+			<header>
+				<nav>
+				Signed in as <%= current_user.name %> (<%= link_to "Logout", '/logout' %>)
+				</nav>
+			</header>
+		<% end %>
+    	<%= yield %>
+    </main>
   </body>
 </html>

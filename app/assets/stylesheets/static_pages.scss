@@ -1,0 +1,123 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header1, .header2, .header3, .header4 {
+	color: #2c3e50;
+	font-size:1em;
+	margin:.25em;
+	padding:0;
+	display:flex;
+	justify-content:center;
+}
+.header1 {
+	font-size:2em;
+}
+.header2 {
+	font-size:1.5em;
+}
+.header3 {
+	font-size:1.3em;
+}
+
+a {
+	text-decoration:none;
+	color:white;
+}
+body {
+	display:flex;
+	flex-direction:column;
+
+	margin:0;
+	font-family:"Montserrat","Helvetica Neue";
+}
+header {
+	padding:1.25em;
+	background-color:#2c3e50;
+	text-transform:uppercase;
+	font-weight:700;
+	text-shadow: 1px 1px #222;
+	color:white;
+
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between; //logo goes left, buttons go right, space between.
+}
+	header nav.logo {
+		font-size:1.5em;
+		white-space:nowrap; //disallows text-wrapping on browser horiz. width decrease.
+	}
+	header nav.navButtons {
+		font-size:1em;
+
+		display:flex;
+		flex-direction:row; //lays out buttons as row
+		flex-wrap:wrap; //allows wrapping when horizontal width is decreased
+		align-items:center; // aligns center axis of buttons to logo
+		justify-content:flex-end; //overflowed buttons stick to right margin
+	}
+		header .navButtons .navButton a {
+			padding: 0 .85em;
+		}
+		header nav a:hover {
+			transition: all 0.2s ease-in-out;
+			color:#18BC9C;
+		}
+	header.subheader {
+		display:none;
+		background-color:#18BC9C;
+		margin:0 5px;
+		border-radius: 0 0 5px 5px;
+		color:white;
+		text-shadow:none;
+		justify-content:space-around;
+	}
+
+	#tech {
+		display:flex;
+		// tamiami angels
+		// new world angels
+		// places to go to get funding
+		// resource map
+		
+	}
+main {
+	margin: 2em;
+	display:flex;
+	flex-direction:column;
+}
+	section {
+		margin:1em 0;
+		border: 2px solid #2c3e50;
+		border-radius: 25px ;
+
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+	}
+	section .header1 {
+		margin:0;
+		border-radius:20px 20px 0 0;
+		border-bottom:2px solid #2c3e50;
+		background-color:#18BC9C;
+	}
+	section h2 {
+		font-size: 2em;
+		
+	}
+	div.containsOne {
+		display:flex;
+		width:100%;
+		justify-content:center;
+	}
+	div.containsRows {
+		border-radius: 5px ;
+		// background-color:#18BC9C;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+	}
+	.containsColumns {
+		display:flex;
+		flex-direction:row;
+	}
