@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'mesa/mesaface'
   get 'demo_pages/template'
   get 'static_pages/techinmiami'
+  get 'techinmiami/events'
+  post 'techinmiami/newevent'
+  get 'techinmiami/list'
 
   get 'users/admin'
   # get '/signup' => 'users#new'

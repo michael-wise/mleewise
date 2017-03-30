@@ -1,0 +1,11 @@
+<% if current_user %>
+	<%= form_for :event, url: '/techinmiami/newevent' do |f| %>
+	  <%# The event URL is used to find the event ID. %>
+	  eventURL: <%= f.text_field :eventURL %>
+	  <%= f.submit "Submit" %>
+	<% end %>
+<% end %>
+<% @events.each do |event| %>
+	<%= event.id %>: 
+	<%= event.eventURL %><br>
+<% end %>
