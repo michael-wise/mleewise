@@ -2,10 +2,8 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
-
-		console.log('test');
-$(function() {
+// # on('turbolinks:load',... is necessary to get this JS to load across link_to clicks. 
+$(document).on('turbolinks:load', function() {
 	$('.navButton a').on('mouseover', function(event) {
 		var $anchor = $(this);
 		$('.subheader').hide();

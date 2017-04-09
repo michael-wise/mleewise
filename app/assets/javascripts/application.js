@@ -8,7 +8,10 @@
 // compiled file. JavaScript code in this file should be added after the last require_* statement.
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
+// about supported diretives.
+//
+// An interesting configuration for setting up page-specific javascript (and still using the power of turbolinks).
+// http://brandonhilkert.com/blog/organizing-javascript-in-rails-application-with-turbolinks/
 //
 //= require jquery
 //= require jquery_ujs

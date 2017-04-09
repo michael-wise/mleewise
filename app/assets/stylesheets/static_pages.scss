@@ -46,7 +46,16 @@ header {
 	header nav.logo {
 		font-size:1.5em;
 		white-space:nowrap; //disallows text-wrapping on browser horiz. width decrease.
+		display:flex;
+		flex-direction:column;
 	}
+	header nav.logo #admin {
+		font-size:10px;
+		display:flex;
+		flex-direction:row;
+		justify-content:space-between;
+	}
+
 	header nav.navButtons {
 		font-size:1em;
 

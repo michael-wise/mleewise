@@ -14,8 +14,17 @@ ActiveRecord::Schema.define(version: 20170330042032) do
 
   create_table "events", force: :cascade do |t|
     t.string   "eventURL"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "eventID"
+    t.datetime "eventTime"
+    t.string   "eventName"
+    t.string   "eventDescription"
+    t.string   "eventOrganizerID"
+    t.string   "eventOrganizerName"
+    t.string   "eventLocation"
+    t.string   "eventVenueID"
+    t.string   "eventVenueName"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|
