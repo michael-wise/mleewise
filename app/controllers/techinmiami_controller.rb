@@ -31,7 +31,7 @@ class TechinmiamiController < ApplicationController
   #returns venueInfo hash.
   def getEventBriteVenue(eventInfo)
   	venueID = eventInfo["venue_id"]
-  	uri = 'https://www.eventbriteapi.com/v3/venues/' + venueID + "/?token=IBRNHMQYAO3EJIP2WNDO"
+  	uri = 'https://www.eventbriteapi.com/v3/venues/' + venueID + "/?token=" + ENV["eventbritePersonal"]
   	require 'open-uri'
   	response = open(uri).read
   	venueInfo = JSON.parse(response)
@@ -40,7 +40,7 @@ class TechinmiamiController < ApplicationController
 
   def getEventBriteOrganizer(eventInfo)
   	organizerID = eventInfo["organizer_id"]
-  	uri = 'https://www.eventbriteapi.com/v3/organizers/' + organizerID + "/?token=IBRNHMQYAO3EJIP2WNDO"
+  	uri = 'https://www.eventbriteapi.com/v3/organizers/' + organizerID + "/?token=" + ENV["eventbritePersonal"]
   	require 'open-uri'
   	response = open(uri).read
   	organizerInfo = JSON.parse(response)
@@ -50,7 +50,7 @@ class TechinmiamiController < ApplicationController
   #returns JSON response for event from eventbrite via input of URL.
   def getEventBrite(eventURL)
   	#construct api uri
-  	uri = 'https://www.eventbriteapi.com/v3/events/' + getIDfromURL(eventURL) + "?token=IBRNHMQYAO3EJIP2WNDO"
+  	uri = 'https://www.eventbriteapi.com/v3/events/' + getIDfromURL(eventURL) + "?token=" + ENV["eventbritePersonal"]
   	require 'open-uri'
   	response = open(uri).read
   	return response
