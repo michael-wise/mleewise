@@ -22,4 +22,6 @@ $ rails s
 
 Note! The bcrypt gem has problems on windows, and likely won't work unless you point your gemfile directly to the bcrypt gem github repo. 
     gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+### Eventbrite API (for techinmiami#newevent copying of events from eventbrite via pasting an eventbrite URL (form only visible to admin users logged in to my site))
+Get an eventbrite secret by creating an app at https://www.eventbrite.com/myaccount/apps/ . Find "Your personal OAuth token" and set it to an OS environment variable named 'eventbritePersonal'.
 

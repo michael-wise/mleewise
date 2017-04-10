@@ -19,6 +19,12 @@ class TechinmiamiController < ApplicationController
   	event.eventVenueName = venueInfo["name"]
   	#puts status = eventInfo["name"]["text"]
 
+    existingEvent = Event.find_by eventID: event.eventID
+    if  existingEvent
+      render text: '"' + existingEvent.eventName + '" with eventID:' + existingEvent.eventID + ' exists in system already. The existing event was created at ' + existingEvent.created_at.to_s
+      return
+    end
+
   	if event.save
   		redirect_to '/techinmiami/events'
   	else
