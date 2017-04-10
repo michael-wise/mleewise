@@ -9,9 +9,10 @@
 <div class="containsRows">
 	<div class="containsOne">
 		<% if current_user %>
+
 			<%= form_for :event, url: '/techinmiami/newevent' do |f| %>
 			  <%# The event URL is used to find the event ID. %>
-			  eventURL: <%= f.text_field :eventURL %>
+			  <br>Enter an eventBrite URL. This will access the event information from eventbrite, and add it to my website. <br><br>eventURL: <%= f.text_field :eventURL %>
 			  <%= f.submit "Submit" %>
 			<% end %>
 		<% end %>
@@ -21,6 +22,7 @@
 	<section>
 	<div class="containsOne header4">
 		<%= event.eventTime.to_formatted_s(:long_ordinal) %>
+
 	</div>
 	<div class="containsOne header4">
 		<%= event.eventVenueName %>
