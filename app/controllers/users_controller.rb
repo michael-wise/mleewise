@@ -1,9 +1,9 @@
 class UsersController < ActiveRecord
+	UsersController::before_action :authorize
 	#A wonderful get-going-fast guide on bcrypt auth in rails.
 	# => https://gist.github.com/thebucknerlife/10090014
 	def admin
 		#To access this method, check if user is logged in.
-		UsersController::before_action :authorize
 		index = User.all
 	end
 	def new
