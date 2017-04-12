@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
+  get 'static_pages/home2'
   get 'mesa/mesapjs'
   get 'mesa/mesaplot'
   get 'mesa/mesaface'
   get 'demo_pages/template'
   
   get '/techinmiami' => 'techinmiami#index'
-  get 'techinmiami/events'
+  get 'techinmiami/index'
+  get 'techinmiami/testEventLayout'
+  get 'techinmiami/testEventLayout1'
+  get 'techinmiami/testEventLayout2'
+  get 'techinmiami/testEventLayout3'
   post 'techinmiami/newevent'
   get 'techinmiami/list'
 

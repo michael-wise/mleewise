@@ -2,7 +2,7 @@
 	
 <div class="containsOne">
 	<div class="containsOne header1">
-		Tech in Miami
+		Upcoming Tech Events in Miami
 	</div>
 
 </div>
@@ -18,25 +18,7 @@
 		<% end %>
 	</div>
 
-<% @events.each do |event| %>
-	<section>
-	<div class="containsOne header4">
-		<%= event.eventTime.to_formatted_s(:long_ordinal) %>
-
-	</div>
-	<div class="containsOne header4">
-		<%= event.eventVenueName %>
-	</div>
-	<div class="containsOne header3">
-		<%= event.eventName %>
-	</div>
-	<div class="containsOne header4">
-		<%# event.eventDescirption %>
-		<%= truncate(event.eventDescription, length: 200) %>
-	</div><br>
-	<%# event.id %>
-	<!-- <%= event.eventURL %><br> -->
-	</section>
-<% end %>
+<%= @events = Event.last(5)
+			render partial: 'techinmiami/events', collection: @events, as: :event %>
 </div>
 </section>

@@ -1,4 +1,14 @@
-		<div class="containsOne header3">Tues, Mar 28 6:00pm</div>
-		<div class="containsOne header2">Great Miami Makeathon</div>
-		<div class="containsOne header3">Thur, Mar 30 6:00pm</div>
-		<div class="containsOne header2">Great Miami Makeathon</div>
+	<section>
+		<div class="containsOne header4">
+			<%= event.eventTime.to_formatted_s(:long_ordinal) %>
+		</div>
+		<div class="containsOne header4">
+			<%= event.eventVenueName %>
+		</div>
+		<div class="containsOne header3">
+			<%= event.eventName %>
+		</div>
+		<div class="containsOne header4">
+			<%= truncate(event.eventDescription, length: 200) %>
+		</div><br>
+	</section>

@@ -26,7 +26,7 @@ class TechinmiamiController < ApplicationController
     end
 
   	if event.save
-  		redirect_to '/techinmiami/events'
+  		redirect_to '/techinmiami/index'
   	else
   		render text: 'failure'
   	end
@@ -73,6 +73,14 @@ class TechinmiamiController < ApplicationController
 
   def events
     @events = Event.all
+  end
+  def testEventLayout
+  end
+  def testEventLayout1
+  end
+  def testEventLayout2
+  end
+  def testEventLayout3
   end
 
   def list
