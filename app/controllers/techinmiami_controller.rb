@@ -35,37 +35,7 @@ class TechinmiamiController < ApplicationController
   #takes eventBrite event JSON and returns venue
   #API gives 403 because supposedly the venue name is private.
   #returns venueInfo hash.
-  def getEventBriteVenue(eventInfo)
-  	venueID = eventInfo["venue_id"]
-  	uri = 'https://www.eventbriteapi.com/v3/venues/' + venueID + "/?token=" + ENV["eventbritePersonal"]
-  	require 'open-uri'
-  	response = open(uri).read
-  	venueInfo = JSON.parse(response)
-  	return venueInfo
-  end
-
-  def getEventBriteOrganizer(eventInfo)
-  	organizerID = eventInfo["organizer_id"]
-  	uri = 'https://www.eventbriteapi.com/v3/organizers/' + organizerID + "/?token=" + ENV["eventbritePersonal"]
-  	require 'open-uri'
-  	response = open(uri).read
-  	organizerInfo = JSON.parse(response)
-  	return organizerInfo
-  end
-
-  #returns JSON response for event from eventbrite via input of URL.
-  def getEventBrite(eventURL)
-  	#construct api uri
-  	uri = 'https://www.eventbriteapi.com/v3/events/' + getIDfromURL(eventURL) + "?token=" + ENV["eventbritePersonal"]
-  	require 'open-uri'
-  	response = open(uri).read
-  	return response
-  end
-
-  def getIDfromURL(url)
-  	dat = /(?:.+)(?:-)(\d{6,})/.match(url)
-  	return dat[-1]
-  end
+  
 
   def index
   	@events = Event.last(5)
@@ -86,6 +56,37 @@ class TechinmiamiController < ApplicationController
   def list
   end
   	private
+      def getEventBriteVenue(eventInfo)
+        venueID = eventInfo["venue_id"]
+        uri = 'https://www.eventbriteapi.com/v3/venues/' + venueID + "/?token=" + ENV["eventbritePersonal"]
+        require 'open-uri'
+        response = open(uri).read
+        venueInfo = JSON.parse(response)
+        return venueInfo
+      end
+
+      def getEventBriteOrganizer(eventInfo)
+        organizerID = eventInfo["organizer_id"]
+        uri = 'https://www.eventbriteapi.com/v3/organizers/' + organizerID + "/?token=" + ENV["eventbritePersonal"]
+        require 'open-uri'
+        response = open(uri).read
+        organizerInfo = JSON.parse(response)
+        return organizerInfo
+      end
+
+      #returns JSON response for event from eventbrite via input of URL.
+      def getEventBrite(eventURL)
+        #construct api uri
+        uri = 'https://www.eventbriteapi.com/v3/events/' + getIDfromURL(eventURL) + "?token=" + ENV["eventbritePersonal"]
+        require 'open-uri'
+        response = open(uri).read
+        return response
+      end
+
+      def getIDfromURL(url)
+        dat = /(?:.+)(?:-)(\d{6,})/.match(url)
+        return dat[-1]
+      end
 	  	def event_params
 	  		params.require(:event).permit(:eventURL)
 		end

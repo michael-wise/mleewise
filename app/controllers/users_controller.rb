@@ -1,5 +1,5 @@
 class UsersController < ActiveRecord
-	UsersController::before_action :authorize
+	before_action :authorize
 	#A wonderful get-going-fast guide on bcrypt auth in rails.
 	# => https://gist.github.com/thebucknerlife/10090014
 	def admin
