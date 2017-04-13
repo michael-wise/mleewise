@@ -11,6 +11,9 @@
 /db/*.sqlite3
 /db/*.sqlite3-journal
 
+# Ignore any environment variables set using ruby.
+/config/environment_variables.rb
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
