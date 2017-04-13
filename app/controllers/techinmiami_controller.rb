@@ -31,16 +31,19 @@ class TechinmiamiController < ApplicationController
   		render text: 'failure', status: :bad_request
   	end
   end
-
-  #takes eventBrite event JSON and returns venue
-  #API gives 403 because supposedly the venue name is private.
-  #returns venueInfo hash.
+  def destroyEvent
+    puts params.permit(:event).require(:event)
+    event = Event.find(params[:event])
+    if event.destroy
+      redirect_to '/techinmiami/index'
+    else
+      render text: 'failed to delete', status: :bad_request
+    end
+  end
   
-
   def index
   	@events = Event.last(5)
   end
-
   def events
     @events = Event.all
   end
@@ -52,10 +55,13 @@ class TechinmiamiController < ApplicationController
   end
   def testEventLayout3
   end
-
   def list
   end
+
   	private
+      #takes eventBrite event JSON and returns venue
+      #API gives 403 because supposedly the venue name is private.
+      #returns venueInfo hash.
       def getEventBriteVenue(eventInfo)
         venueID = eventInfo["venue_id"]
         uri = 'https://www.eventbriteapi.com/v3/venues/' + venueID + "/?token=" + ENV["eventbritePersonal"]
@@ -89,5 +95,5 @@ class TechinmiamiController < ApplicationController
       end
 	  	def event_params
 	  		params.require(:event).permit(:eventURL)
-		end
+		  end
 end

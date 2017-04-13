@@ -11,4 +11,10 @@
 		<div class="containsOne header4">
 			<%= truncate(event.eventDescription, length: 200) %>
 		</div><br>
+			<% if current_user %>
+				<div class="containsOne header4">
+					<%= button_to "delete", '/techinmiami/destroyEvent', method: :delete, params: {event: event } %>
+				</div>
+			<% end %>
+				
 	</section>

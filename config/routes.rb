@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'techinmiami/testEventLayout2'
   get 'techinmiami/testEventLayout3'
   post 'techinmiami/newevent'
+  delete 'techinmiami/destroyEvent'
   get 'techinmiami/list'
 
   get '/blogs' => 'blogs#index'
