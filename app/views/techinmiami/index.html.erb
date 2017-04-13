@@ -1,24 +1,21 @@
-<section>
-	
-<div class="containsOne">
-	<div class="containsOne header1">
-		Upcoming Tech Events in Miami
+<main class="columns">
+	<div class="flex1 center">
+		<%= "content" %>
 	</div>
-
-</div>
-<div class="containsRows">
-	<div class="containsOne">
+	<div class="flex3 rows">
+		<div class="center em12">EventBrite Tech Events</div>
 		<% if current_user %>
-
-			<%= form_for :event, url: '/techinmiami/newevent' do |f| %>
+			<section class="center">
+			<%= form_for :event, html: {class: "rows"}, url: '/techinmiami/newevent' do |f| %>
 			  <%# The event URL is used to find the event ID. %>
-			  <br>Enter an eventBrite URL. This will access the event information from eventbrite, and add it to my website. <br><br>eventURL: <%= f.text_field :eventURL %>
+			  eventURL: <%= f.text_field :eventURL %>
 			  <%= f.submit "Submit" %>
 			<% end %>
+			</section>
 		<% end %>
+		<%= @events = Event.last(5)
+			render partial: 'techinmiami/events', collection: @events, as: :event 
+		%>
 	</div>
 
-<%= @events = Event.last(5)
-			render partial: 'techinmiami/events', collection: @events, as: :event %>
-</div>
-</section>
+</main>
