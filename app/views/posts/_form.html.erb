@@ -7,7 +7,7 @@
         <% end %>
     </div>
   <% end %>
-
+    <%= f.input :postType, collection: ["personal","professional"] %>
     <%= f.input :title %>
     <%= f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}} %>
     <%= f.button :submit %>

@@ -2,6 +2,9 @@
 		<div class="center em15 top">
 			<%= post.created_at %>
 		</div>
+		<div class="center">
+			<%= post.postType %>
+		</div>
 		<div class="left em15">
 			<%= link_to post.title, post_path(post) %>
 		</div>
