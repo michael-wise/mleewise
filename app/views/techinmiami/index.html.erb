@@ -6,14 +6,11 @@
 		<% if current_user %>
 			<section class="center">
 			<%= form_for :event, html: {class: "rows"}, url: '/techinmiami/newevent' do |f| %>
-			  <%# The event URL is used to find the event ID. %>
 			  eventURL: <%= f.text_field :eventURL %>
 			  <%= f.submit "Submit" %>
 			<% end %>
 			</section>
 		<% end %>
-		<%= recentEvents
-			render partial: 'techinmiami/events', collection: recentEvents(5), as: :event 
-		%>
+		<%= render partial: 'techinmiami/events', collection: recentEvents(5), as: :event %>
 	</div>
 

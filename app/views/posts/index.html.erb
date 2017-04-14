@@ -11,11 +11,5 @@
   </div>
 </div>
 <div class="flex3 rows">
-  <div class="rows fullish">
-    <section class="rows full">
-      <div class="center top em15">test</div>
-      <div class="center">test</div>
-      <div class="center">test</div>
-    </section>
-  </div>
+  <%= render partial: 'posts/post', collection: recentPosts(5), as: :post %>
 </div>
