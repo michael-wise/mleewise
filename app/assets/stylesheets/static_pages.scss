@@ -45,7 +45,7 @@ body {
 	font-family:"Montserrat","Helvetica Neue";
 }
 header {
-	padding:1.25em;
+	padding:.3em 1.25em .3em 1.25em;
 	font-size: 1.6em;
 	background-color:#2c3e50;
 	text-transform:uppercase;
@@ -124,6 +124,7 @@ main {
 		
 	}
 	.full {width:100%}
+	.fullish {width:95%}
 	.center {
 		justify-content:center;
 		display:flex;}
@@ -172,3 +173,5 @@ main.rows, .rows {
 }
 .padvert0 {padding-top: 0; padding-bottom:0;}
 .padhorz0 {padding-left: 0; padding-right: 0;}
+.block * {display:block;}
+.margin1em {margin:1em;}

@@ -1,11 +1,21 @@
-<section class="rows">
+<div class="flex1 center">
+  <div class="rows fullish">
     <% @posts.each do |post| %>
-      <section>
-          <h2><%= post.title %></h2>
-          <h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
-          <%= raw(post.body).truncate(358) %>
-          <%= link_to "READ MORE", post_path(post) %>
+      <section class="rows full">
+          <div class="center top em15"><%= post.title %></div>
+          <div class="center"><%= post.created_at.strftime('%b %d, %Y') %></div>
+          <div class="center"><%= raw(post.body).truncate(358) %></div>
+          <div class="center"><%= link_to "READ MORE", post_path(post) %></div>
       </section>
     <% end %>
-
-</section>
+  </div>
+</div>
+<div class="flex3 rows">
+  <div class="rows fullish">
+    <section class="rows full">
+      <div class="center top em15">test</div>
+      <div class="center">test</div>
+      <div class="center">test</div>
+    </section>
+  </div>
+</div>

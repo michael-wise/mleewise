@@ -8,7 +8,7 @@ gem 'coffee-rails', '4.2.1'
 gem 'jquery-rails', '4.1.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
-gem 'ckeditor',     '~>4.1'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'simple_form',  '~>3.2'
 #gem 'bcrypt',       '3.1.11'
 #gem 'bcrypt', '~> 3.1.11', platforms: :ruby
