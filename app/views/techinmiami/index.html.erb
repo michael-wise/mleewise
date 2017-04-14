@@ -12,8 +12,8 @@
 			<% end %>
 			</section>
 		<% end %>
-		<%= @events = Event.last(5)
-			render partial: 'techinmiami/events', collection: @events, as: :event 
+		<%= recentEvents
+			render partial: 'techinmiami/events', collection: recentEvents(5), as: :event 
 		%>
 	</div>
 
