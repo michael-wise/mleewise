@@ -4,6 +4,11 @@
 
 // # on('turbolinks:load',... is necessary to get this JS to load across link_to clicks. 
 $(document).on('turbolinks:load', function() {
+	if(window.location.pathname=='/')
+		$('.subheader').hide();
+		$('main').on('mouseover', function(event) {
+			$('.subheader').hide();
+		});
 	$('.navButton a').on('mouseover', function(event) {
 		var $anchor = $(this);
 		$('.subheader').hide();
