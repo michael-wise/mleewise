@@ -1,6 +1,6 @@
 <div class="flex1 center">
   <div class="rows fullish">
-    <% @posts.each do |post| %>
+    <% recentPosts(5).each do |post| %>
       <section class="rows full">
           <div class="center top em15"><%= post.title %></div>
           <div class="center"><%= post.created_at.strftime('%b %d, %Y') %></div>
