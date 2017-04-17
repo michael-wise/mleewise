@@ -4,7 +4,7 @@
       <section class="rows full">
           <div class="center top em15"><%= post.title %></div>
           <div class="center"><%= post.created_at.strftime('%b %d, %Y') %></div>
-          <div class="center"><%= raw(post.body).truncate(358) %></div>
+          <div class="center full rows"><%= raw(post.body).truncate(358) %></div>
           <div class="center"><%= link_to "READ MORE", post_path(post) %></div>
       </section>
     <% end %>

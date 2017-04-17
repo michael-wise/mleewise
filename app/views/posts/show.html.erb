@@ -3,7 +3,7 @@
       <section class="rows full">
 		<div class="top center full em15"><%= @post.title %></div>
 		<div class="full center"><%= @post.created_at.strftime('%b %d, %Y') %></div>
-		<div class="full center"><%= raw @post.body %></div>
+		<div class="full center rows"><%= raw @post.body %></div>
       </section>
   </div>
 </div>
