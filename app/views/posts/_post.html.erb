@@ -1,6 +1,6 @@
 	<section class="rows padchildren">
 		<div class="center em15 top">
-			<%= post.created_at %>
+			<%= post.created_at.strftime('%B %d %Y') %>
 		</div>
 		<div class="center">
 			<%= post.postType %>
@@ -10,8 +10,8 @@
 		</div>
 		<% if current_user %>
 			<div class="center columns">
-				<%= button_to "delete", post_path(post), method: :delete %>
 				<%= button_to "edit", edit_post_path(post), method: :get %>
+				<%= button_to "delete", post_path(post), method: :delete %>
 			</div>
 		<% end %>
 	</section>
