@@ -74,10 +74,24 @@
 	<header class="subheader" id="me">
 		<nav>Me</nav>
 	</header>
+
+	<% if :notice %>
+		<div class="center full notice">
+			<%= yield :notice %>	
+		</div>
+	<% end %>
 	
 	<main class="columns">
 
-    	<%= yield %>
-    </main>
+		<div class="flex1 rows pad1em">
+	    	<%= yield %>
+		</div>
+
+		<div class="flex3 rows pad1em">
+			<%= yield :aside %>
+		</div>
+		
+	</main>
+
   </body>
 </html>

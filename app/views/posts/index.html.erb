@@ -1,15 +1,29 @@
-<div class="flex1 center">
-  <div class="rows fullish">
-    <% recentPosts(5).each do |post| %>
-      <section class="rows full">
-          <div class="center top em15"><%= post.title %></div>
-          <div class="center"><%= post.created_at.strftime('%b %d, %Y') %></div>
-          <div class="center full rows"><%= raw(post.body).truncate(358) %></div>
-          <div class="center"><%= link_to "READ MORE", post_path(post) %></div>
-      </section>
-    <% end %>
-  </div>
-</div>
-<div class="flex3 rows">
+<div class="center em12">Blogs</div>
+<% recentPosts(5).each do |post| %>
+
+  <section class="rows center">
+      <div class="center top em15">
+        <%= post.title %>
+      </div>
+      <div class="center">
+        <%= post.created_at.strftime('%b %d, %Y') %>
+      </div>
+      <div class="center full rows">
+        <%= raw(post.body).truncate(358) %>
+      </div>
+      <div class="center">
+        <%= link_to "READ MORE", post_path(post) %>
+      </div>
+  </section>
+
+<% end %>
+
+<% content_for :aside do %>
   <%= render partial: 'posts/post', collection: recentPosts(5), as: :post %>
-</div>
+<% end %>
+
+<% if flash[:notice] %>
+  <% content_for :notice do %>
+    flash
+  <% end %>
+<% end %>

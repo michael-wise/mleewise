@@ -1,16 +1,10 @@
-	<div class="flex1 center">
-		<%= "content" %>
-	</div>
-	<div class="flex3 rows">
-		<div class="center em12">EventBrite Tech Events</div>
-		<% if current_user %>
-			<section class="center">
-			<%= form_for :event, html: {class: "rows"}, url: '/techinmiami/newevent' do |f| %>
-			  eventURL: <%= f.text_field :eventURL %>
-			  <%= f.submit "Submit" %>
-			<% end %>
-			</section>
-		<% end %>
-		<%= render partial: 'techinmiami/events', collection: recentEvents(5), as: :event %>
-	</div>
-
+<div class="center em12">Tech in Miami</div>
+<section class="rows padchildren">
+	<div class="center em15 top">test</div>
+	<div class="center em15">test</div>
+</section>
+<% content_for :aside do %>
+	<div class="center em12">EventBrite Tech Events</div>
+	<%= render partial: 'techinmiami/admin' %>
+	<%= render partial: 'techinmiami/events', collection: recentEvents(5), as: :event %>
+<% end %>

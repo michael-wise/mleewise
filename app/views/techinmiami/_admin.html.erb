@@ -1,0 +1,15 @@
+	<% if current_user %>
+		<section class="rows padchildren">
+		<%= form_for :event, html: {class: "rows pad0"}, url: '/techinmiami/newevent' do |f| %>
+		<div class="center em15 top">
+		  Enter Event URL
+		</div>
+		<div class="center em15">
+		  <%= f.text_field :eventURL %>
+		</div>
+		<div class="center em15">
+		  <%= f.submit "Submit" %>
+		</div>
+		<% end %>
+		</section>
+	<% end %>
