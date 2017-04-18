@@ -1,1 +1,10 @@
-testEventLayout3.html.erb
+<div class="center em12">Tech in Miami</div>
+<section class="rows padchildren">
+	<div class="center em15 top">test</div>
+	<div class="center em15">test</div>
+</section>
+<% content_for :aside do %>
+	<div class="center em12">EventBrite Tech Events</div>
+	<%= render partial: 'techinmiami/admin' %>
+	<%= render partial: 'techinmiami/events', collection: pageinateRecentEvents(5), as: :event %>
+<% end %>

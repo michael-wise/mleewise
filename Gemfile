@@ -10,6 +10,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'simple_form',  '~>3.2'
+gem 'will_paginate', '~>3.1.0'
 #gem 'bcrypt',       '3.1.11'
 #gem 'bcrypt', '~> 3.1.11', platforms: :ruby
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'

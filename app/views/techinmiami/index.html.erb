@@ -6,5 +6,6 @@
 <% content_for :aside do %>
 	<div class="center em12">EventBrite Tech Events</div>
 	<%= render partial: 'techinmiami/admin' %>
-	<%= render partial: 'techinmiami/events', collection: recentEvents(5), as: :event %>
+	<%= render partial: 'techinmiami/events', collection: pageinateRecentEvents(5), as: :event %>
+	<%= render partial: 'techinmiami/pagination' %>
 <% end %>
